@@ -1,38 +1,188 @@
-.App {
+@font-face {
+  font-family: 'Lululemon';
+  src: url('./TEMPILTR.TTF');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400&display=swap');
+
+body {
+  margin: 0;
+  padding: 2em;
+  font-family: 'Source Serif 4', sans-serif;  
+  background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('/public/images/bg.jpg');
+  background-color: #E8CEBF;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+h1 {
+  font-family: "Lululemon";
+}
+
+.bigDiv {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.adiDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 1em;
+  background-color: #CEBBC6;
+}
+
+.luluDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 300px;
+  margin: 0px 15px 20px 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+span {
+  color: #d31334;
+}
+
+h1,
+h3 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  text-align: center;
+  font-size: 1.15em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  margin: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  color: #133875;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a:hover {
+  color: #d31334;
 }
 
-.App-link {
-  color: #61dafb;
+ul,
+li {
+  text-align: center;
+  list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  cursor: pointer;
+  background-color: #C43678;
+  color: #fff;
+  border: none;
+  font-size: 1em;
+  border-radius: .75em;
+  padding: 0.75em;
+  margin: 1em;
 }
+
+button:hover {
+  background-color: #133875;
+}
+
+.wishlist {
+  text-align: center;
+  color: #fff;
+  border-radius: .75em;
+  padding: 0.75em;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.wishlist:after {
+  position: absolute;
+  content: " ";
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #6F97E8;
+  background-image: linear-gradient(315deg, #6F97E8 0%, #E5606F 74%);
+  transition: all 0.3s ease;
+}
+.wishlist:hover {
+  background: transparent;
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  color: #fff;
+}
+.wishlist:hover:after {
+  -webkit-transform: scale(2) rotate(180deg);
+  transform: scale(2) rotate(180deg);
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+.btn {
+  background-color: #17631E;
+}
+
+/* .done {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #de3b3b;
+  -webkit-text-decoration: line-through;
+  -webkit-text-decoration-thickness: 2px;
+  -webkit-text-decoration-color: #de3b3b;
+  -moz-text-decoration: line-through;
+  -moz-text-decoration-thickness: 2px;
+  -moz-text-decoration-color: #de3b3b;
+  -ms-text-decoration: line-through;
+  -ms-text-decoration-thickness: 2px;
+  -ms-text-decoration-color: #de3b3b;
+} */
