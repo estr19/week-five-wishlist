@@ -70,7 +70,10 @@ function App() {
   return(
     <div className='bigDiv'>
       <div className='description'>
-        <h1>Welcome to the WishList <i className="fas fa-exclamation"></i></h1>
+        <div className='gradient-text'>
+          <h1>Welcome to the WishList <i className="fas fa-exclamation"></i></h1>
+        </div>
+        <div className='main '>
           <p>
             Here are some of my <i>absolute</i> favorite items from both <span><strong>adidas</strong></span> and <span><strong>lululemon</strong></span>. If you like any of them, click <span><strong>WishList</strong></span> button and it will be added to your list here:
           </p>
@@ -82,6 +85,7 @@ function App() {
               )
             }))}
           </ul>
+        </div>
       </div>
       <div className='adiDiv'>
         <div className='container'>

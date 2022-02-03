@@ -38,6 +38,11 @@ h1 {
   align-items: center;
   width: 80%;
   padding: 1em;
+  background-color: #fafafa;
+}
+
+.main {
+  padding: 0.5em;
   background-color: #CEBBC6;
 }
 
@@ -150,6 +155,7 @@ button:hover {
   background-image: linear-gradient(315deg, #6F97E8 0%, #E5606F 74%);
   transition: all 0.3s ease;
 }
+
 .wishlist:hover {
   background: transparent;
   box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
@@ -158,6 +164,7 @@ button:hover {
     inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
   color: #fff;
 }
+
 .wishlist:hover:after {
   -webkit-transform: scale(2) rotate(180deg);
   transform: scale(2) rotate(180deg);
@@ -169,4 +176,25 @@ button:hover {
 
 .btn {
   background-color: #17631E;
+}
+
+.gradient-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3em;
+  color: transparent;
+  background: conic-gradient(
+    #b8b4e4 17%, 
+    #9983c9 17%, #9983c9 36%, 
+    #d2f787 36%, #d2f787 50%, 
+    #ff9999 50%, #ff9999 72%, 
+    #80c6ff 72%, #80c6ff 83%, 
+    #f2b38d 83%);
+  background-size: 25%;
+  background-clip: text;  
+  -webkit-background-clip: text;
+  transition: 1.5s;
+}
+
+.gradient-text:hover {
+  letter-spacing: 8px;
 }
