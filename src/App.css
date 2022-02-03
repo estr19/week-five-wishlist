@@ -90,7 +90,6 @@ p {
 a {
   margin: 1em;
   font-weight: bold;
-  text-decoration: none;
   cursor: pointer;
   color: #133875;
 }
@@ -171,18 +170,3 @@ button:hover {
 .btn {
   background-color: #17631E;
 }
-
-/* .done {
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
-  text-decoration-color: #de3b3b;
-  -webkit-text-decoration: line-through;
-  -webkit-text-decoration-thickness: 2px;
-  -webkit-text-decoration-color: #de3b3b;
-  -moz-text-decoration: line-through;
-  -moz-text-decoration-thickness: 2px;
-  -moz-text-decoration-color: #de3b3b;
-  -ms-text-decoration: line-through;
-  -ms-text-decoration-thickness: 2px;
-  -ms-text-decoration-color: #de3b3b;
-} */

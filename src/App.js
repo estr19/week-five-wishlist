@@ -8,7 +8,6 @@ function App() {
   const [list, setList] = useState([]);
   const {name, picture} = dataAdidas[file];
   const [gifts, setGifts] = useState(dataLululemon);
-  const [crossed, setCrossed] = useState('false');
 
   const prevFile = () => {
     setFile((file => {
@@ -45,29 +44,41 @@ function App() {
         }
       }
     }
+    if (list.includes(itemL) || list.includes(itemA)) {
+      if (itemL) {
+        if (list.includes(itemL)) {
+          const newList = [...list];
+          newList.splice(newList.indexOf(itemL), 1);
+          setList(newList);
+        }
+      }
+      if (itemA) {
+        if (list.includes(itemA)) {
+          const newList = [...list];
+          newList.splice(newList.indexOf(itemA), 1);
+          setList(newList);
+        }
+      }
+    }
   }
 
-  const removeItem = (id) => {
-    let newGifts = gifts.filter(gift => gift.id !== id)
-    setGifts(newGifts);
-  }
-
-  const crossedOut = () => {
-    setCrossed(!crossed);
-  }
+  // const removeItem = (id) => {
+  //   let newGifts = gifts.filter(gift => gift.id !== id)
+  //   setGifts(newGifts);
+  // }
 
   return(
     <div className='bigDiv'>
       <div className='description'>
-        <h1>Welcome to the WishList <i class="fas fa-exclamation"></i></h1>
+        <h1>Welcome to the WishList <i className="fas fa-exclamation"></i></h1>
           <p>
             Here are some of my <i>absolute</i> favorite items from both <span><strong>adidas</strong></span> and <span><strong>lululemon</strong></span>. If you like any of them, click <span><strong>WishList</strong></span> button and it will be added to your list here:
           </p>
           <ul>
             {list.map((newElement => {
-              const {name} = newElement;
+              const {name, link} = newElement;
               return(
-                <li className={crossed ? null : 'done'} onClick={crossedOut} key={newElement.id}><span><i class="fas fa-check"></i></span> {name}</li>
+                <li key={newElement.id}><span><i className="fas fa-check"></i></span>&nbsp;&nbsp;&nbsp;{name}<a href={link} target='_blank' rel="noreferrer">where to buy</a></li>
               )
             }))}
           </ul>
@@ -86,7 +97,7 @@ function App() {
             </div>
             <div className='container'>
               <button onClick={() => prevFile()}>Prev</button>
-              <button className='wishlist' onClick={() => addFile(name)}>WishList</button>
+              <button className='wishlist' onClick={() => addFile(name)}>Wishlist</button>
               <button onClick={() => nextFile()}>Next</button>
             </div>
           </div>
@@ -98,7 +109,7 @@ function App() {
         </div>
         <div className='list'>
             {gifts.map((element => {
-              const {id, name, picture, link} = element;
+              const {id, name, picture} = element;
               return(
                 <div className='item' key={id}>
                   <div className='container'>
@@ -108,11 +119,8 @@ function App() {
                     <img src={picture} height='200px' alt={name} />
                   </div>
                   <div className='container'>
-                    <a href={link} target='_blank' rel="noreferrer">find out more</a>
-                  </div>
-                  <div className='container'>
-                    <button className='wishlist' onClick={() => addFile(name)}>WishList</button>
-                    <button className='remove-each' onClick={() => removeItem(id)}>Remove</button>
+                  <button className='wishlist' onClick={() => addFile(name)}>Wishlist</button>
+                    {/* <button className='remove-each' onClick={() => removeItem(id)}>Remove</button> */}
                   </div>
                 </div>
               )
